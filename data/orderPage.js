@@ -4,7 +4,7 @@ import { getProduct } from "./products.js";
 import { loadProductsFetch } from "./products.js";
 import dayjs from 'https:unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
 
-// import { cart } from './cart.js';
+import { cart } from './cart.js';
 
 
 console.log(orders)
@@ -197,4 +197,10 @@ function renderOrderPage() {
 
 
 
-
+function updateCartQuantity() {
+  let orderQuantity = orders.length
+    document.querySelector('.js-cart-quantity').innerHTML = orderQuantity;
+    const orderForm = orderQuantity <= 1 ? document.querySelector('.js-cart-text').innerHTML = 'Order' : document.querySelector('.js-cart-text').innerHTML = 'Orders'
+  
+ }
+ updateCartQuantity();
